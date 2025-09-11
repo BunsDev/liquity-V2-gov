@@ -122,7 +122,7 @@ contract UniV4MerklRewards is IInitiative {
     /// @param _bold Amount of BOLD that was distributed
     function onClaimForInitiative(uint256 _claimEpoch, uint256 _bold) external override onlyGovernance {}
 
-    function createCampaign(uint256 _amount) internal {
+    function _createCampaign(uint256 _amount) internal {
         // Avoid if rewards too low
         if (_amount < CAMPAIGN_BOLD_AMOUNT_THRESHOLD) return;
 
@@ -153,6 +153,6 @@ contract UniV4MerklRewards is IInitiative {
         assert(amount >= claimableAmount);
         require(amount > 0, "UniV4MerklInitiative: no funds for campaign");
 
-        createCampaign(amount);
+        _createCampaign(amount);
     }
 }
