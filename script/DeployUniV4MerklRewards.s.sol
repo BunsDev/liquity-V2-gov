@@ -4,10 +4,9 @@ pragma solidity 0.8.24;
 import {Script} from "forge-std/Script.sol";
 import "forge-std/console2.sol";
 
-import "src/Governance.sol";
 import "src/UniV4MerklRewards.sol";
 
-contract DeployAndRegisterUniV4MerklRewards is Script {
+contract DeployUniV4MerklRewards is Script {
     address constant GOVERNANCE_ADDRESS = 0x807DEf5E7d057DF05C796F4bc75C3Fe82Bd6EeE1;
     address constant BOLD_TOKEN_ADDRESS = 0x6440f144b7e50D6a8439336510312d2F54beB01D;
     uint256 constant CAMPAIGN_BOLD_AMOUNT_THRESHOLD = 100e18;
@@ -44,9 +43,5 @@ contract DeployAndRegisterUniV4MerklRewards is Script {
         );
 
         console2.log("Deployed UniV4MerklRewards: ", address(uniV4MerklRewards));
-
-        // Register initiative
-        Governance governance = Governance(GOVERNANCE_ADDRESS);
-        governance.registerInitiative(address(uniV4MerklRewards));
     }
 }
