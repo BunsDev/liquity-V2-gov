@@ -10,10 +10,11 @@ contract DeployUniV4MerklRewardsTester is Script {
     address constant GOVERNANCE_ADDRESS = 0x807DEf5E7d057DF05C796F4bc75C3Fe82Bd6EeE1;
     address constant BOLD_TOKEN_ADDRESS = 0x6440f144b7e50D6a8439336510312d2F54beB01D;
     uint256 constant CAMPAIGN_BOLD_AMOUNT_THRESHOLD = 100e18;
-    bytes32 constant UNIV4_POOL_ID = 0x5d0ed52610c76d7bf729130ce7ddc0488b2f4bd0a0db1f12adbe6a32deaff893;
-    uint32 constant WEIGHT_FEES = 1500;
-    uint32 constant WEIGHT_TOKEN_0 = 4500;
-    uint32 constant WEIGHT_TOKEN_1 = 4000;
+    //bytes32 constant UNIV4_POOL_ID = 0x5d0ed52610c76d7bf729130ce7ddc0488b2f4bd0a0db1f12adbe6a32deaff893; // 0.05% fee
+    bytes32 constant UNIV4_POOL_ID = 0x27eb93f973ec12bdc20f8a0959df46dfef29250bbb25c97e1ab6c96d2ad97f8e; // 0.01% fee
+    uint32 constant WEIGHT_FEES = 7500; // 75% liquidity contribution
+    uint32 constant WEIGHT_TOKEN_0 = 2000; // 20% BOLD
+    uint32 constant WEIGHT_TOKEN_1 = 500; //  5% USDC
 
     address deployer;
 

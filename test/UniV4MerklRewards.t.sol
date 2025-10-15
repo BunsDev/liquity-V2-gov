@@ -22,7 +22,8 @@ contract UniV4MerklE2ETests is Test {
     Governance private constant governance = Governance(0x807DEf5E7d057DF05C796F4bc75C3Fe82Bd6EeE1);
     IDistributionCreator constant merklDistributionCreator =
         IDistributionCreator(0x8BB4C975Ff3c250e0ceEA271728547f3802B36Fd);
-    bytes32 private constant UNIV4_POOL_ID = 0x5d0ed52610c76d7bf729130ce7ddc0488b2f4bd0a0db1f12adbe6a32deaff893;
+    //bytes32 constant UNIV4_POOL_ID = 0x5d0ed52610c76d7bf729130ce7ddc0488b2f4bd0a0db1f12adbe6a32deaff893; // 0.05% fee
+    bytes32 constant UNIV4_POOL_ID = 0x27eb93f973ec12bdc20f8a0959df46dfef29250bbb25c97e1ab6c96d2ad97f8e; // 0.01% fee
     uint32 private constant WEIGHT_FEES = 1500;
     uint32 private constant WEIGHT_TOKEN_0 = 4500;
     uint32 private constant WEIGHT_TOKEN_1 = 4000;
